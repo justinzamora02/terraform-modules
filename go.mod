@@ -2,7 +2,11 @@ module github.com/justinzamora02/terraform-modules
 
 go 1.18
 
-require github.com/gruntwork-io/terratest v0.40.6
+require (
+	github.com/gruntwork-io/terratest v0.40.6
+	github.com/hashicorp/terraform-json v0.13.0
+	github.com/stretchr/testify v1.7.0
+)
 
 require (
 	cloud.google.com/go v0.83.0 // indirect
@@ -34,7 +38,6 @@ require (
 	github.com/hashicorp/go-safetemp v1.0.0 // indirect
 	github.com/hashicorp/go-version v1.3.0 // indirect
 	github.com/hashicorp/hcl/v2 v2.9.1 // indirect
-	github.com/hashicorp/terraform-json v0.13.0 // indirect
 	github.com/imdario/mergo v0.3.11 // indirect
 	github.com/jinzhu/copier v0.0.0-20190924061706-b57f9002281a // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
@@ -51,7 +54,6 @@ require (
 	github.com/pquerna/otp v1.2.0 // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
-	github.com/stretchr/testify v1.7.0 // indirect
 	github.com/tmccombs/hcl2json v0.3.3 // indirect
 	github.com/ulikunitz/xz v0.5.8 // indirect
 	github.com/urfave/cli v1.22.2 // indirect
