@@ -12,10 +12,6 @@ jobs:
         with:
           go-version: '1.18'
 
-      - uses: webfactory/ssh-agent@v0.5.4
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
       # https://markphelps.me/posts/speed-up-your-go-builds-with-actions-cache/
       - id: go-cache-paths
         run: |
@@ -47,3 +43,12 @@ jobs:
         run: |
           go get ./...
           go test ./... -v
+
+      - name: Validate terraform config
+        run: |
+          find . -maxdepth 2 -type f -name "*.tf" -exec dirname "{}" \; | uniq | while read dir; do
+            cd $dir
+            terraform init
+            terraform validate
+            cd ..
+          done
