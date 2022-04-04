@@ -1,0 +1,22 @@
+name: Test
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - name: Generate TF docs
+        uses: terraform-docs/gh-actions@v1.0.0
+        with:
+          output-method: inject
+          git-push: "true"
+          output-file: README.md
+          working-dir: .
+          recursive: true
+          recursive-path: .
