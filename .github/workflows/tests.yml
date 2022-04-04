@@ -12,7 +12,9 @@ jobs:
         with:
           go-version: '1.18'
 
-      - uses: fregante/setup-git-user@v1
+      - uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       
       - name: Cache Go modules
         uses: actions/cache@v3
@@ -32,4 +34,4 @@ jobs:
       - name: Run unit tests
         run: |
           go get ./...
-          # go test ./... -v
+          go test ./... -v
