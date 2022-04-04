@@ -6,7 +6,7 @@ on:
       - completed
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -18,4 +18,4 @@ jobs:
           output-method: inject
           git-push: "true"
           output-file: README.md
-          find-dir: examples/
+          find-dir: ./
