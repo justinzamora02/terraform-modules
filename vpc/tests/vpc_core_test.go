@@ -11,11 +11,11 @@ import (
 func TestTerraformVPCCore(t *testing.T) {
 	t.Parallel()
 
-	tempDirectory := test_structure.CopyTerraformFolderToTemp(t, "../examples", "minimal")
+	tempDirectory := test_structure.CopyTerraformFolderToTemp(t, "../examples", "core")
 	planFilePath := filepath.Join(tempDirectory, "plan.out")
 
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
-		TerraformDir: "../examples/minimal",
+		TerraformDir: "../examples/core",
 		PlanFilePath: planFilePath,
 	})
 
