@@ -23,14 +23,14 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ steps.go-cache-paths.outputs.go-build }}
-          key: ${{ runner.os }}-go-build-${{ hashFiles('**/go.sum') }}
+          key: ${{ runner.os }}-build-${{ hashFiles('**/go.sum') }}
 
       # Cache go mod cache, used to speedup builds
       - name: Go Mod Cache
         uses: actions/cache@v2
         with:
           path: ${{ steps.go-cache-paths.outputs.go-mod }}
-          key: ${{ runner.os }}-go-mod-${{ hashFiles('**/go.sum') }}
+          key: ${{ runner.os }}-mod-${{ hashFiles('**/go.sum') }}
       
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
