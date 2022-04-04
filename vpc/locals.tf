@@ -1,7 +1,6 @@
 module "vpc_labels" {
   source = "cloudposse/label/null"
-  # Cloud Posse recommends pinning every module to a specific version
-  # version = "x.x.x"
+  version = "0.25.0"
 
   namespace  = var.namespace
   stage      = var.stage
