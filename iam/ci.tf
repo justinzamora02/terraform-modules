@@ -22,3 +22,8 @@ resource "aws_iam_user_policy" "ci_test_essentials" {
   user   = aws_iam_user.ci_runner.name
   policy = data.aws_iam_policy_document.test_essentials.json
 }
+
+output "ci_runner" {
+  value = aws_iam_access_key.ci_runner.encrypted_secret
+  sensitive = true
+}
