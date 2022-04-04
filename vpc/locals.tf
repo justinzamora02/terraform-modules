@@ -1,5 +1,5 @@
 module "vpc_labels" {
-  source = "cloudposse/label/null"
+  source  = "cloudposse/label/null"
   version = "0.25.0"
 
   namespace  = var.namespace

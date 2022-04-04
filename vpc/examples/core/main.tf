@@ -1,9 +1,9 @@
 module "vpc" {
   source = "../.."
 
-  namespace        = "local"
-  stage            = "test"
-  name             = "min"
+  namespace = "local"
+  stage     = "test"
+  name      = "min"
 }
 
 terraform {

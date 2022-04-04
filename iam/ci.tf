@@ -24,6 +24,6 @@ resource "aws_iam_user_policy" "ci_test_essentials" {
 }
 
 output "ci_runner" {
-  value = aws_iam_access_key.ci_runner.encrypted_secret
+  value     = aws_iam_access_key.ci_runner.encrypted_secret
   sensitive = true
 }
